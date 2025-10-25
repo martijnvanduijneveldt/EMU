@@ -104,9 +104,24 @@ Each lane includes its own eject button, status LED, and a filament colour LED t
 **Part 1: Filamentalist and Stepper Assembly Guide**<br/>
 [![EMU Filamentalist and Stepper Assembly Guide](https://img.youtube.com/vi/FNcXC9HXUmI/0.jpg)](https://www.youtube.com/watch?v=FNcXC9HXUmI)
 <br/>
+**Errata:**
+1. BMG Gear insertion is not visible in the video. Do this before adding the stepper main body and screwing it on.
+2. Switch sensor screws are M2x10 self taping or m2x8 bhcs/shcs
+3. Filament path - BMG gear alignment step is not shown in the video. Insert some filament through the unit manually, loosen the BMG geear set screw and move it back and forth. Screw down the BMG gear.
+4. For the BMG tensioning arm, the bushing is no longer an option. 
+5. Add a washer to the stepper tensioning arm on both sides of the spring.
+6. Stepper body screws are all M3x20
+<br/>
 
 **Part 2: Drybox Assembly Guide**<br/>
 [![EMU Dry Box Assembly Guide](https://img.youtube.com/vi/JZzMyOBCdSM/0.jpg)](https://www.youtube.com/watch?v=JZzMyOBCdSM)
+<br/>
+
+**Errata:**
+1. A threaded stand off is inserted in the front lip of the lid and secured from either side with M3x40 FHCS bolts.
+2. Box and wiring hatch changes - the wiring hatch now is screwed in from the outside of the unit. Push through the hole from the inside out and then screw in place.
+3. Wiring hatch foam is now glued on the box itself. The foam chord channel is on the outside of the box. 
+4. The BME sensor has been relocated to the LED cover.
 <br/>
 
 **Part 3: Base Assembly Guide** <br/>
@@ -115,6 +130,12 @@ Each lane includes its own eject button, status LED, and a filament colour LED t
 
 **Part 4: Electronics Assembly Guide** <br/>
 [![EMU Elecrronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
+<br/>
+
+**Errata:**
+1. Base unit top clamping screws (M3x8 FHCS) now screw into heatset inserts inserted on the other side of the frame.
+2. External combiner sensor is no longer specified in the default setup. That wiring part can be omitted.
+3. Encoder is no longer specified in the default setup That wiring part can be omitted.
 <br/>
 
 ## Wiring Diagrams
