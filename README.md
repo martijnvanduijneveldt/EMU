@@ -138,6 +138,11 @@ Each lane includes its own eject button, status LED, and a filament colour LED t
 3. Encoder is no longer specified in the default setup That wiring part can be omitted.
 <br/>
 
+## Calibration guide
+
+EMU has been developed and tested using Happy Hare. The setup instructions can be found [here](./docs/software_setup.md).
+
+
 ## Wiring Diagrams
 Depending on the number of lanes assembled, the wiring will vary slightly. Below are some initial wiring key notes to get your started.<br/>
 
