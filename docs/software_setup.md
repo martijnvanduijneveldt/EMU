@@ -530,6 +530,24 @@ effect_gate_empty:         mmu_static_black,        (0, 0, 0)
 effect_gate_empty_sel:     mmu_ready_red,          (0.2, 0, 0)
 ```
 
+Add the below custom LED effect colors at the bottom of your **printer.cfg**. These are used in the LED effects above.
+
+```
+[mmu_led_effect mmu_static_white_dim]
+define_on:    gates
+layers:       static 0 0 top (0.3,0.3,0.3)
+
+[mmu_led_effect mmu_ready_white]
+define_on:    gates
+layers:       breathing 2 0 subtract (0.4,0.4,0.4)
+              static 0 0 top (0.5,0.5,0.5)
+
+[mmu_led_effect mmu_ready_red]
+define_on:    gates
+layers:       breathing 2 0 subtract (0.4,0.0,0.0)
+              static 0 0 top (0.5,0.0,0.0)
+```
+
 ### Update mmu/addons/mmu_eject_buttons_hw.cfg
 **Step 1: Clear the mmu_eject_buttons_hw.cfg file.** <br/><br/>
 Start by completely deleting the content of that file and hitting save.
