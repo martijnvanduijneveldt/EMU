@@ -687,12 +687,12 @@ log_m117_messages: 1
 ```			
 **Speeds:** Our objective is reliability with operation. While the EMU can operate at 500mm/sec feeding, any snag in the filament path risks the lane stepper skipping steps. As such, it is recommended that conservative values are used in the speed set up, and tune up from there.</br>
 ```
-gear_from_spool_speed: 200
-gear_from_spool_accel: 100
-#gear_from_buffer_speed: 200 # This is not necessary. Delete this line as there is no buffer.
-#gear_from_buffer_accel: 100 # This is not necessary. Delete this line as there is no buffer.
-gear_unload_speed: 200
-gear_unload_accel: 100
+gear_from_spool_speed: 250
+gear_from_spool_accel: 120
+#gear_from_buffer_speed: 250 # This is not necessary. Delete this line as there is no buffer.
+#gear_from_buffer_accel: 120 # This is not necessary. Delete this line as there is no buffer.
+gear_unload_speed: 250
+gear_unload_accel: 120
 
 gear_short_move_speed: 100
 gear_short_move_accel: 100
