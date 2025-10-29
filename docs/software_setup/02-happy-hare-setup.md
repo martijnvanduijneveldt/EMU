@@ -1,103 +1,14 @@
-# EMU Happy Hare Hardware and Software Setup Guide
+# Happy Hare Setup Guide
 
 This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
 
 ## Table of Contents
 
-- [Setting up CAN Bus](#setting-up-can-bus)
-- [Flashing the EBB boards](#flashing-the-ebb-boards)
-- [Updating the boards with the latest klipper version](#updating-the-boards-with-the-latest-klipper-version)
-- [Setting up Happy Hare](#setting-up-happy-hare)
-- [Configuring the EMU hardware in Happy Hare](#configuring-the-emu-hardware-in-happy-hare)
-- [Configuring Happy Hare](#configuring-happy-hare)
-- [Calibrating the unit](#calibrating-the-unit)
-- [First start up](#first-start-up)
-- [Next steps](#next-steps)
-- [Expanding the unit with more lanes](#expanding-the-unit-with-more-lanes)
+- [Installing Happy Hare](#installing-happy-hare)
+- [Configuring the EMU hardware](#configuring-the-emu-hardware)
+- [Configuring Happy Hare parameters](#configuring-happy-hare-parameters)
 
-
-## Setting up CAN Bus
-If your printer does not have canbus set up, follow the excellent guide from Esoterical here: https://canbus.esoterical.online. If you are not familiar with CAN Bus, read through the guide from Esoterical. **CAN Bus is simple to set up and operate, but please do read the guide to familiarise yourselves with the CAN Bus concepts and terminology.**
-
-Do not forget to terminate the last EBB board or CANBus device in your bus (depending on your bus topology).
-
-## Flashing the EBB boards
-Prior to setting up the EMU, the EBB boards need to be flashed with Katapult and Klipper. Flashing instructions can be found here https://canbus.esoterical.online/toolhead_flashing.html. The boards are flashed in exactly the same way as if they were used as a toolhead board. Below are some high level instructions; however do refer back to the guide by Esoterical for a more comprehensive guide.<br/>
-
-**Step 1:** Install katapult:<br/>
-Katapult is a piece of software that sits on the EBB units (and any CAN Bus device) and acts as an easy way to set your board in "flashing mode" making klipper updates super easy. It is highly recommended that Katapult is flashed on the boards.
-```
-test -e ~/katapult && (cd ~/katapult && git pull) || (cd ~ && git clone https://github.com/Arksine/katapult) ; cd ~
-```
-**Step 2:** Connect your first EBB board over USB **outside the EMU**. Make sure the **power by USB jumper is set**.<br/>
-**Step 3:** Set the board in DFU mode by pressing and holding the reset and boot buttons. Release the reset button first, then release the boot button<br/>
-**Step 4:** The board should show as in DFU mode. Run ```lsusb``` and check that something like the below is shown in the command line:<br/>
-```
-Bus 001 Device 005: ID 0483:df11 STMicroelectronics STM Device in DFU Mode
-```
-**Step 5:** initiate menuconfig for Katapult.<br/>
-```
-cd ~/katapult
-make menuconfig
-```
-![image](https://github.com/user-attachments/assets/9f642d03-d781-4025-bc28-959574c30c8a)
-
-```
-make
-```
-**Step 6:** Flash katapult to the EBB board<br/>
-```
-sudo dfu-util -R -a 0 -s 0x08000000:mass-erase:force:leave -D ~/katapult/out/katapult.bin -d 0483:df11
-```
-**Step 7:** initiate menuconfig for klipper and make the firmware<br/>
-```
-sudo service klipper stop
-cd ~/klipper
-make clean
-make menuconfig
-```
-![image](https://github.com/user-attachments/assets/f5ab3561-25aa-42c2-b838-8629a2cb38cf)
-```
-make
-```
-**Step 8:** Prepare to flash klipper<br/>
-Now that katapult is loaded, unplug the USB cable, remove the USB power jumper (if installed) and install the EBB on the unit. Power it via the canbus pigtail.
-
-Please note, **you can set up katapult on all the boards and install them back to the unit all at once**. However, identifying which board is which from the UID is more tricky if you have them all installed in the unit. 
-
-You have two options to identify them.
-1. Unplug the positive (red) wire from the wagos for all the boards except the one you are intending to flash klipper, Run the command from Step 9, note the UUID, flash klipper and note down the UUID you just used with the lane number in your documentation  _--or--_
-2. Run the command from Step 9, pick one UUID, flash Klipper, note which board's led stopped flashing and note down the UUID you just used with the lane number in your documentation.
-
-**Step 9:** Find the board UUID<br/>
-Run the command below and note the produced UUID
-```
-python3 ~/katapult/scripts/flashtool.py -i can0 -q
-```
-**Step 10:** Flash klipper<br/>
-```
-python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u youruuid
-```
-**Flashing the remaining boards:** <br/>
-
-Repeat step 2 (connect via USB),3 (set in DFU mode),4 (lsusb to confirm DFU),6 (flash katapult),8 (install the board),9 (pick the UUID),10 (flash klipper) for each subsequent board. Please note that as the boards are the same you do not need to re-run the menu config and make process.
-
-> [!IMPORTANT]
-> Remember to note down the UUID - Lane values for your reference. This combination will be used later in the guide to set up Happy Hare.
-
-## Updating the boards with the latest klipper version
-```
-sudo service klipper stop
-cd ~/klipper
-make clean
-make menuconfig
-make
-python3 ~/katapult/scripts/flashtool.py -i can1 -u youruuid -r
-python3 ~/katapult/scripts/flashtool.py -i can1 -u youruuid -f ~/klipper/out/klipper.bin
-```
-Repeat the last two steps for each EBB board. Note the uuid used with the lane number in your documentation. This will be used later.
-
-## Setting up Happy Hare
+## Installing Happy Hare
 Install Happy Hare. More detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/Installation
 ```
 cd ~
@@ -169,7 +80,7 @@ update_spoolman_location: True
 <br/><br/>
 Baseline setup is now complete!
 <br/><br/>
-## Configuring the EMU hardware in Happy Hare
+## Configuring the EMU hardware
 
 ### Update mmu/base/mmu.cfg
 The Happy hare installer generates a generic mmu.cfg file that needs re-writing for the EMU. 
@@ -637,7 +548,7 @@ Once all of the above steps are completed hit save and restart klipper. The MMU 
   <img src="https://github.com/user-attachments/assets/ec2f4983-2228-4a1b-92f5-a9b0ec7f4e13" alt="Installer screen" width="80%">
 </p>
 
-## Configuring Happy Hare
+## Configuring Happy Hare parameters
 Now that the hardware is set up and visible to klipper, the next step is to configure the Happy Hare software to match the EMU capabilities and general Type B MMU good practice. That configuration will be predominately done in the mmu/base/mmu_parameters.cfg file. The indicated configuration below is geared towards reliability of feeding vs. filament swap speed. Use that as a starting point and tune to your liking once the unit is fully configured and operational.
 
 ### Setting up the EMU software parameters in mmu/base/mmu_parameters.cfg
@@ -821,207 +732,3 @@ Unlike the hardware setup files, do not delete the content of this file. The bel
 variable_min_toolchange_z       : 15.0 # Be safe and dont scratch the bed
 variable_park_travel_speed      : 450  # Travel a bit faster to avoid stringing
 ```
-
-## Calibrating the unit
-Now that the baseline software is set up, the unit needs to be calibrated. There are 2 key calibrations that need to be done before the unit allows you to print.
-1. Lane rotation distance
-2. Bowden length per lane
-
-Detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/MMU-Calibration-TypeB . The below will outline the mandatory minimum steps to calibrate the unit.
-
-### Lane rotation distance calibration
-Before you start with this calibration, remove all bowden tubes from the rear of the dry boxes going to the combiner. Add a short length of PTFE tubing (50mm is enough) to the first lane dry box exit. This will help guide the filament and not grind on the ecas connector. Then proceed to load some filament and execute the below instructions to grip it and feed it.
-
-**Step 1:** Select the gate, load filament and move 200mm (or more) till the filament is showing from the unit exit ECAS connector.
-```
-MMU_SELECT GATE=0
-MMU_TEST_MOVE MOVE=200 # run this once or more till you get filament out from the dry box.
-```
-**Step 2:** Cut the end of the filament poking out from the short ptfe tube attached to the dry box flush with the ptfe tube. Run the below command:
-```
-MMU_TEST_MOVE MOVE=100
-```
-Cut the filament again flush with the ptfe tube attached to the dry box. Measure it. Now use the below command to calibrate the rotation distance of the box.
-```
-MMU_CALIBRATE_GEAR MEASURED=102.5 #102.5 is an example value and should correspond to the value measured.
-```
-**Step 3:** Repeat for all lanes
-```
-MMU_SELECT GATE=1 # then 2,3,4, etc etc.
-MMU_TEST_MOVE MOVE=200 # run this once or more till you get filament out from the dry box.
-..... cut the filament at the box ptfe tube exit .....
-MMU_TEST_MOVE MOVE=100
-MMU_CALIBRATE_GEAR MEASURED=102.5 #102.5 is an example value and should correspond to the value measured.
-```
-
-> [!IMPORTANT]
-> If you observe significant variation between gates, double check that your BMG gears are centred with the filament path and that the tension is approximately as equal as possible between them.
-
-Rotation distance calibration is now done! 
-
-### Bowden tube calibration
-Now remove the short PTFE tube from the rear of the dry box and connect the combiner and your bowden tube to the EMU Sync and from there to the toolhead. The final calibration is to measure the length of bowden tube from the lane filament parking location to the toolhead. These will be different for each lane, hence these need to be individually calibrated following the procedure below.
-
-> [!IMPORTANT]
-> **IMPORTANT:** When calibrating bowden length for each lane, it is mandatory to keep the EMUSync manually held in the tension position, ie the two tubes brought towards each other. Why? The bowden calibration measures how much filament the lane feeds till the toolhead entry sensor is triggered. If the EMU Sync is left free, the springs can unpredictably compress/expand resulting in incorrect calibration. In addition, holding the EMU Sync in tension means the bowden length is slightly shorter. This helps avoid scenarios where the filament hits against the extruder if the lane rotation distance is slightly off.
-
-```
-MMU_SELECT GATE=0
-MMU_CALIBRATE_BOWDEN
-```
-Repeat this for each lane, for example:
-```
-MMU_SELECT GATE=1 # then 2,3,4, etc etc.
-MMU_CALIBRATE_BOWDEN
-```
-The unit calibration is now done and the unit is ready to be used!
-
-## First start up
-Follow the below first start up procedure to validate correct wiring of the EMU.
-
-1. Load filament to each gate. The filament should be parked right before the post stepper sensor. In the UI, verify that the MMU Pre Gate sensor for the lane is marked as **detected** and the MMU Gear sensor for the lane is marked as **empty**. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
-2. Run the MMU_TEST_MOVE MOVE=50 command. Verify that the MMU Gear sensor for the lane is marked as **detected**. If not, you may have a wire break in the system.
-3. Press the eject button. The filament should now be ejected from the unit. If not, you may have a wire break in the system.
-4. Verify that the LEDs change color as the filament is inserted. From off to white for the eject button and off to white (if not using spoolman) for the led inside the box. If not, you may have either a power issue to the LED's or the in-out wiring sequence in the LED chain is wrong.
-5. Validate your sync feedback sensor wiring. Bring the two sides of the bowden tube together. The tension switch should be showing as **detected** in the UI. Move the two sides of the bowden tube away from each other till the switch clicks. The compression switch should be showing as **detected** in the UI. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
-6. Home the printer, load filament to the first lane and type T0. The hotend should heat up to 230C and load filament to the toolhead. If the filament crashes to the extruder entry, your bowden distance calibration is off. If there is excessive material coming out of the nozzle, the toolhead calibration is off.
-
-**After you have setup your Cut Tip macro** parameters:
-1. Type MMU_UNLOAD. The toolhead should cut the filament and rewind to the EMU.
-2. If the toolhead fails to cut, the cut tip macro is not configured correctly
-
-## Next Steps
-Finally you have to set up your slicer to recognise and operate with a multi-material unit. More instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/Slicer-Setup
-
-Optionally you can also set up:
-1. Klipper screen integration: https://github.com/moggieuk/Happy-Hare/wiki/KlipperScreen
-2. Mainsail / Fluid MMU panel: https://github.com/moggieuk/Happy-Hare/wiki/Mainsail-Fluidd-Integration
-3. Spoolman: https://github.com/moggieuk/Happy-Hare/wiki/Spoolman-Support
-
-## Expanding the unit with more lanes
-Beyond the electrical connections, the below steps need to be undertaken when adding additional lanes to the EMU unit.
-
-**mmu.cfg**
-
-Add an additional MCU block for each new lane:
-```
-[mcu mmuN]
-canbus_uuid: UUID 
-canbus_interface: can0
-```
-
-Add an additional boards pin block:
-```
-[board_pins mmuN]
-mcu: mmuN
-aliases:
-
-    MMU_GEAR_UART_N=PA15,
-    MMU_GEAR_STEP_N=PD0,
-    MMU_GEAR_DIR_N=PD1,
-    MMU_GEAR_ENABLE_N=PD2,
-    MMU_GEAR_DIAG_N=,
-
-    MMU_PRE_GATE_N=PB7,
-    MMU_POST_GEAR_N=PB5,
-
-    EJECT_BUTTON_N=PB6,
-```
-
-**mmu_hardware.cfg:**
-
-Update the below to reflect your current lane count:
-```
-[mmu_machine]
-num_gates: 8
-```
-Add additional stepper definitions, where N is the lane number:
-```
-...
-[tmc2209 stepper_mmu_gear_N]
-uart_pin: mmuN:MMU_GEAR_UART_N
-
-[stepper_mmu_gear_N]
-step_pin: mmuN:MMU_GEAR_STEP_N
-dir_pin: mmuN:MMU_GEAR_DIR_N
-enable_pin: !mmuN:MMU_GEAR_ENABLE_N
-...
-```
-
-Define the additional pre-gate and post gear sensors (pre-stepper, post-stepper)
-```
-[mmu_sensors]
-...
-pre_gate_switch_pin_N: ^mmuN:MMU_PRE_GATE_N
-post_gear_switch_pin_N: ^mmuN:MMU_POST_GEAR_N
-...
-```
-
-Increase your neopixel chain count to match the total number of lanes multipled by 2
-```
-[neopixel mmu_leds]
-chain_count: NN			# Number lanes x2
-```
-
-Update the mmu_led's entry and exit LED numbers
-```
-[mmu_leds unit0]
-exit_leds:   neopixel:mmu_leds (1,3,5,7,9,11,13,15, NN)
-entry_leds: neopixel:mmu_leds (2,4,6,8,10,12,14,16, NN)
-```
-
-**mmu_eject_buttons_hw.cfg**
-
-Define the additional eject buttons in the mmu_eject_buttons_hw.cfg file:
-```
-[gcode_button mmu_eject_button_N]
-pin: mmuN:EJECT_BUTTON_N
-press_gcode: _MMU_EJECT_BUTTON GATE=N
-```
-
-**mmu_macro_vars.cfg:**
-
-Add an additional tool change gcode macro at the end of the file for each new lane:
-```
-[gcode_macro TN]
-gcode: MMU_CHANGE_TOOL TOOL=N
-```
-
-**emu_macros.cfg**
-
-Add additional temperature sensor, fan and BME sensor definitions and update the custom fan control macro to use them
-
-Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as descibed in the calibration section.
-
-```
-[temperature_sensor Lane_N]
-sensor_type: BME280
-i2c_address: 118
-i2c_mcu: mmuN
-i2c_software_scl_pin: mmuN:PB3
-i2c_software_sda_pin: mmuN:PB4
-
-[temperature_sensor Lane_N_onboard]
-sensor_type: temperature_mcu
-sensor_mcu: mmuN
-min_temp: 0
-max_temp: 130
-
-[fan_generic emu_fan_N]
-pin: mmuN:PA0
-max_power: 1
-kick_start_time: 0.5
-
-[gcode_macro MMU_FAN_CFG]
-...
-variable_sensors: ".....,Lane_N_onboard"
-variable_fans:    "......,emu_fan_N"
-...
-```
-
-## Seeking help
-
-The Happy Hare discord is a great resource to help you going. Both in the general channel as well as the dedicated EMU channel. Link to the discord can be found here: https://discord.gg/aABQUjkZPk
-
-
-

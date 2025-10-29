@@ -1,18 +1,104 @@
-# EMU – Expandable Multi-material Unit - Assembly and Wiring Guides
+# EMU - BOM, Printing, Assembly and Wiring Guide
 
-
-#### Table of Contents
+## Table of Contents
 - [BOM](#bom)
+- [Print Settings](#print-settings)
+  - [Filamentalist components and Lane stepper components](#filamentalist-components-and-lane-stepper-components)
+  - [Dry Box components](#dry-box-components)
+  - [Base unit components](#base-unit-components)
 - [Assembly Videos](#assembly-videos)
-- [Wiring Instructions and Diagrams](#wiring-diagrams)
+  - [Part 1: Filamentalist and Stepper Assembly Guide](#part-1-filamentalist-and-stepper-assembly-guide)
+  - [Part 2: Drybox Assembly Guide](#part-2-drybox-assembly-guide)
+  - [Part 3: Base Assembly Guide](#part-3-base-assembly-guide)
+  - [Part 4: Electronics Assembly Guide](#part-3-base-assembly-guide)
+- [Wiring Instructions and Diagrams](#wiring-instructions-and-diagrams)
 
+<p align="center">
+  <img src="/docs/assets/images/EMU_multi_lane_unit.png" width="100%">
+</p>
 
 ## BOM  
-[Draft BOM here](https://docs.google.com/spreadsheets/d/1jYJXBgpc_iLDfC17fC2LTYKrSEy5ocPbGEQ_EEOGCvI)
+The EMU Bill of Materials can be found here: [Draft BOM](https://docs.google.com/spreadsheets/d/1jYJXBgpc_iLDfC17fC2LTYKrSEy5ocPbGEQ_EEOGCvI)
+
+## Print Settings
+
+### Filamentalist components and Lane stepper components:
+The below print settings are recommended for the filamentalist and lane stepper components. These are structural parts hence require print settings optimised for strength:
+- 0.2 mm layer height
+- 0.2 mm first layer height
+- 4 walls
+- 40% infill
+- 0.4mm extrusion width (line width) throughout
+- Gyroid sparse infill is recommended as it tends to warp less
+- Inner Outer wall ordering, to ensure overhangs and supported areas do not sag
+- Arachne wall generator
+- One wall top and bottom surfaces (optional but recommended - parts look nicer)
+- Disable thick bridges
+- Z hop enabled to avoid nozzle scraping (0.2 is sufficient)
+
+> [!IMPORTANT]
+> **Parts are not shrinkage compensated** - calibrate your filament shrinkage first! If the bearings are loose, you're either under extruding, or over compensating for shrinkage.<br/>
+> **Disable thick bridges** in your slicer and make sure your flow rate (EM) is on point! **Over extrusion, thick bridges and insufficient cooling will cause your sensor magnets and bearings not to fit as the bridges will sag.**
+
+**For the TPU filamentalist CDR ring:**
+- 0.2 mm layer height
+- 0.2 mm first layer height
+- 0.4mm extrusion width (line width) throughout
+- 6 walls, so that the object is printed solid
+- Avoid crossing walls enabled
+- Random seam. This is important to avoid an aligned seam bump
+- Inner Outer wall ordering, to ensure overhangs and supported areas do not sag
+- Z Hop turned off to reduce stringing
+  
+> [!IMPORTANT]
+> Printing TPU can be a challenge - print by object and a slight negative (-0.1) extra length on retract can help reduce stringing.
+
+### Dry Box components:
+The below print settings are recommended for the dry boxes and the desiccant holder. The dry boxes need to be as air tight as possible, hence the recommended print settings below are tuned to achieve this while keeping filament use under control.
+- 0.2 mm layer height
+- 0.2 mm first layer height
+- 3 walls
+- 15% infill
+- For the lid specifically, use 4 walls and 30% infill to ensure strength in the front lip.
+- 0.4mm extrusion width (line width) throughout
+- Gyroid sparse infill is recommended as it tends to warp less
+- Inner Outer wall ordering, to ensure dry box hatch features print with minimal sagging.
+- Arachne wall generator
+- One wall top and bottom surfaces (optional but recommended - parts look nicer)
+- Disable thick bridges
+- Z hop enabled to avoid nozzle scraping (0.2 is sufficient)
+
+> [!IMPORTANT]
+> Print with **extra first layer squish, use an adhesion promoter on the bed and in a pre-heated chamber with low fan** to prevent warping and ensure better layer adhesion. Mouse ears on the box corners may be required. Slight lifting will not impact part function.<br/>
+> **Do not use mouse ears on the lid** as the slicer wrongly fills in the aesthetic lines.<br/>
+> **Over extrude (only) the box and lid by ~2% (0.02)** to ensure air tightness. Increase your slicer flow multiplier (EM) by 0.02.
+
+### Base unit components:
+The below print settings are recommended for the base units and their accessories. 
+- 0.2 mm layer height
+- 0.2 mm first layer height
+- 3 walls
+- 15% infill
+- 0.4mm extrusion width (line width) throughout
+- Gyroid sparse infill is recommended as it tends to warp less
+- Inner Outer Inner wall ordering to improve visual appearance
+- Arachne wall generator
+- One wall top and bottom surfaces (optional but recommended - parts look nicer)
+- Disable thick bridges
+- Z hop enabled to avoid nozzle scraping (0.2 is sufficient)
+- For the **Eject button lens, 99 walls are recommended,** to reduce possibility of infill shining through the natural ABS
+
+> [!IMPORTANT]
+> Print with **extra first layer squish, use an adhesion promoter on the bed and in a pre-heated chamber with low fan** to prevent warping. Slight lifting will not impact part function.
+
+> [!NOTE]
+> **Paint on fuzzy skin** on the outer walls of the base unit will improve appearance.<br/>
+> Paint on ONLY, not full model fuzzy skin. <br/>
+> 0.1 distance, 0.1 or 0.2mm depth. Displacement method (orca slicer)
 
 ## Assembly Videos
 
-**Part 1: Filamentalist and Stepper Assembly Guide**<br/>
+### Part 1: Filamentalist and Stepper Assembly Guide
 [![EMU Filamentalist and Stepper Assembly Guide](https://img.youtube.com/vi/FNcXC9HXUmI/0.jpg)](https://www.youtube.com/watch?v=FNcXC9HXUmI)
 <br/>
 **Errata:**
@@ -22,9 +108,8 @@
 4. For the BMG tensioning arm, the bushing is no longer an option. 
 5. Add a washer to the stepper tensioning arm on both sides of the spring.
 6. Stepper body screws are all M3x20
-<br/>
 
-**Part 2: Drybox Assembly Guide**<br/>
+### Part 2: Drybox Assembly Guide
 [![EMU Dry Box Assembly Guide](https://img.youtube.com/vi/JZzMyOBCdSM/0.jpg)](https://www.youtube.com/watch?v=JZzMyOBCdSM)
 <br/>
 
@@ -33,13 +118,12 @@
 2. Box and wiring hatch changes - the wiring hatch now is screwed in from the outside of the unit. Push through the hole from the inside out and then screw in place.
 3. Wiring hatch foam is now glued on the box itself. The foam chord channel is on the outside of the box. 
 4. The BME sensor has been relocated to the LED cover.
-<br/>
 
-**Part 3: Base Assembly Guide** <br/>
+### Part 3: Base Assembly Guide
 [![EMU Base Assembly Guide](https://img.youtube.com/vi/2SmAMuXas38/0.jpg)](https://www.youtube.com/watch?v=2SmAMuXas38)
 <br/>
 
-**Part 4: Electronics Assembly Guide** <br/>
+### Part 4: Electronics Assembly Guide
 [![EMU Elecrronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
 <br/>
 
@@ -47,10 +131,8 @@
 1. Base unit top clamping screws (M3x8 FHCS) now screw into heatset inserts inserted on the other side of the frame.
 2. External combiner sensor is no longer specified in the default setup. That wiring part can be omitted.
 3. Encoder is no longer specified in the default setup That wiring part can be omitted.
-<br/>
 
-
-## Wiring Diagrams
+## Wiring Instructions and Diagrams
 Depending on the number of lanes assembled, the wiring will vary slightly. Below are some initial wiring key notes to get your started.<br/>
 
 **Multi-lane setup wiring notes (2+ lanes)**
@@ -75,13 +157,13 @@ You can daisy chain as many base units as you desire. Simply wire the XT30+2 CAN
 
 **EBB 42 wiring diagram**<br/>
 <p align="center">
-  <img src="/docs/wiring_diagrams/EMU_wiring_ebb42.png" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU_wiring_ebb42.png" width="95%">
 </p>
 
 **EBB 36 wiring diagram**<br/>
 Please note, the EBB36 uses identical pin definitions to the EBB42.
 <p align="center">
-  <img src="/docs/wiring_diagrams/EMU_wiring_ebb36.png" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU_wiring_ebb36.png" width="95%">
 </p>
 
 **Printer PSU**<br/>
