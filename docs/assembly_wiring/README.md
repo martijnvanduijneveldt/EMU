@@ -1,9 +1,4 @@
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-
-# EMU – Expandable Multi-material Unit
-### A new take on a MMU by <a href="https://github.com/DW-Tas">DW-Tas</a> and <a href="https://github.com/igiannakas">igiannakas</a><br/>
-<a href="https://ko-fi.com/O5O5OCC0K"><img src="docs/images/Ko-fi_smol.png"> Ko-Fi</a>
-
+# EMU – Expandable Multi-material Unit - Assembly and Wiring Guides
 
 
 #### Table of Contents
@@ -80,13 +75,13 @@ You can daisy chain as many base units as you desire. Simply wire the XT30+2 CAN
 
 **EBB 42 wiring diagram**<br/>
 <p align="center">
-  <img src="docs/wiring_diagrams/EMU_wiring_ebb42.png" width="95%">
+  <img src="/docs/wiring_diagrams/EMU_wiring_ebb42.png" width="95%">
 </p>
 
 **EBB 36 wiring diagram**<br/>
 Please note, the EBB36 uses identical pin definitions to the EBB42.
 <p align="center">
-  <img src="docs/wiring_diagrams/EMU_wiring_ebb36.png" width="95%">
+  <img src="/docs/wiring_diagrams/EMU_wiring_ebb36.png" width="95%">
 </p>
 
 **Printer PSU**<br/>

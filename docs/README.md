@@ -2,7 +2,7 @@
 
 # EMU – Expandable Multi-material Unit
 ### A new take on a MMU by <a href="https://github.com/DW-Tas">DW-Tas</a> and <a href="https://github.com/igiannakas">igiannakas</a><br/>
-<a href="https://ko-fi.com/O5O5OCC0K"><img src="docs/images/Ko-fi_smol.png"> Ko-Fi</a>
+<a href="https://ko-fi.com/O5O5OCC0K"><img src="/docs/images/Ko-fi_smol.png"> Ko-Fi</a>
 
 
 
