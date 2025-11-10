@@ -11,6 +11,7 @@
   - [Part 2: Drybox Assembly Guide](#part-2-drybox-assembly-guide)
   - [Part 3: Base Assembly Guide](#part-3-base-assembly-guide)
   - [Part 4: Electronics Assembly Guide](#part-3-base-assembly-guide)
+  - [Part 5: EMU Sync Assembly images](#part-5-emu-sync-assembly-images)
 - [Wiring Instructions and Diagrams](#wiring-instructions-and-diagrams)
 
 <p align="center">
@@ -130,7 +131,37 @@ The below print settings are recommended for the base units and their accessorie
 **Errata:**
 1. Base unit top clamping screws (M3x8 FHCS) now screw into heatset inserts inserted on the other side of the frame.
 2. External combiner sensor is no longer specified in the default setup. That wiring part can be omitted.
-3. Encoder is no longer specified in the default setup That wiring part can be omitted.
+3. Encoder is no longer specified in the default setup. That wiring part can be omitted.
+
+### Part 5: EMU Sync Assembly images
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/a6ed3cc1-94bc-4ced-ba34-3ada3b6d1ab7" alt="Step 1" title="Step 1" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/d3149cf1-f560-41a3-a0df-14186119fd8c" alt="Step 2" title="Step 2" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/082b3623-a154-4694-bea5-f0d3bacd42ce" alt="Step 3" title="Step 3" width="260"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/f69eb6d1-7551-43fa-bf63-bef8f88a4b4e" alt="Step 4" title="Step 4" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/9446431d-ec45-4a40-9f84-90bec7771a69" alt="Step 5" title="Step 5" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/b8387c21-7a64-45e5-a4e4-22349f332325" alt="Step 6" title="Step 6" width="260"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/647e8999-7d55-4544-b1c8-61a09ac85993" alt="Step 7" title="Step 7" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/88401b0d-2823-4eea-afb0-aed03d34f71f" alt="Step 8" title="Step 8" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a8add605-8989-4c88-9c0b-201614890c5b" alt="Step 9" title="Step 9" width="260"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/74f27a82-6c06-4229-b128-bb8074d70efe" alt="Step 10" title="Step 10" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/f8df4ac3-6fc5-4a27-a4a9-10f9019631a6" alt="Step 11" title="Step 11" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/df0cf87b-0db0-4988-ba6a-75a16d724592" alt="Step 12" title="Step 12" width="260"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/9c6053eb-bc29-4636-bdd3-927f1290f9cd" alt="Step 13" title="Step 13" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/5f7a9d4a-76ad-45ba-a63f-ca94b55183c7" alt="Step 14" title="Step 14" width="260"/></td>
+    <td><img src="https://github.com/user-attachments/assets/f0e292be-39b0-4fcc-955d-34bc72faa14d" alt="Step 15" title="Step 15" width="260"/></td>
+  </tr>
+</table>
+
 
 ## Wiring Instructions and Diagrams
 Depending on the number of lanes assembled, the wiring will vary slightly. Below are some initial wiring key notes to get your started.<br/>
