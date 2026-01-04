@@ -142,118 +142,118 @@ aliases:
     MMU_NEOPIXEL=PD3,
     MMU_NEOPIXEL_LOGO=,
 
-    MMU_PRE_GATE_0=PB7,
-    MMU_POST_GEAR_0=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
     MMU_TENSION=PB8, # First lane has the sync feedback sensor attached to it!
     MMU_COMPRESSION=PB9, # First lane has the sync feedback sensor attached to it!
 
-    EJECT_BUTTON_0=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu1]
 mcu: mmu1 
 aliases:
 
-    MMU_GEAR_UART_1=PA15,
-    MMU_GEAR_STEP_1=PD0,
-    MMU_GEAR_DIR_1=PD1,
-    MMU_GEAR_ENABLE_1=PD2,
-    MMU_GEAR_DIAG_1=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_1=PB7,
-    MMU_POST_GEAR_1=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_1=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu2]
 mcu: mmu2 
 aliases:
 
-    MMU_GEAR_UART_2=PA15,
-    MMU_GEAR_STEP_2=PD0,
-    MMU_GEAR_DIR_2=PD1,
-    MMU_GEAR_ENABLE_2=PD2,
-    MMU_GEAR_DIAG_2=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_2=PB7,
-    MMU_POST_GEAR_2=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_2=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu3]
 mcu: mmu3
 aliases:
 
-    MMU_GEAR_UART_3=PA15,
-    MMU_GEAR_STEP_3=PD0,
-    MMU_GEAR_DIR_3=PD1,
-    MMU_GEAR_ENABLE_3=PD2,
-    MMU_GEAR_DIAG_3=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_3=PB7,
-    MMU_POST_GEAR_3=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_3=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu4]
 mcu: mmu4 
 aliases:
 
-    MMU_GEAR_UART_4=PA15,
-    MMU_GEAR_STEP_4=PD0,
-    MMU_GEAR_DIR_4=PD1,
-    MMU_GEAR_ENABLE_4=PD2,
-    MMU_GEAR_DIAG_4=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_4=PB7,
-    MMU_POST_GEAR_4=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_4=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu5]
 mcu: mmu5
 aliases:
 
-    MMU_GEAR_UART_5=PA15,
-    MMU_GEAR_STEP_5=PD0,
-    MMU_GEAR_DIR_5=PD1,
-    MMU_GEAR_ENABLE_5=PD2,
-    MMU_GEAR_DIAG_5=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_5=PB7,
-    MMU_POST_GEAR_5=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_5=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu6]
 mcu: mmu6
 aliases:
 
-    MMU_GEAR_UART_6=PA15,
-    MMU_GEAR_STEP_6=PD0,
-    MMU_GEAR_DIR_6=PD1,
-    MMU_GEAR_ENABLE_6=PD2,
-    MMU_GEAR_DIAG_6=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_6=PB7,
-    MMU_POST_GEAR_6=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_6=PB6,
+    EJECT_BUTTON=PB6,
 
 [board_pins mmu7]
 mcu: mmu7
 aliases:
 
-    MMU_GEAR_UART_7=PA15,
-    MMU_GEAR_STEP_7=PD0,
-    MMU_GEAR_DIR_7=PD1,
-    MMU_GEAR_ENABLE_7=PD2,
-    MMU_GEAR_DIAG_7=,
+    MMU_GEAR_UART=PA15,
+    MMU_GEAR_STEP=PD0,
+    MMU_GEAR_DIR=PD1,
+    MMU_GEAR_ENABLE=PD2,
+    MMU_GEAR_DIAG=,
 
-    MMU_PRE_GATE_7=PB7,
-    MMU_POST_GEAR_7=PB5,
+    MMU_PRE_GATE=PB7,
+    MMU_POST_GEAR=PB5,
 
-    EJECT_BUTTON_7=PB6,
+    EJECT_BUTTON=PB6,
 ```
 This file is now complete! 
 
@@ -319,85 +319,85 @@ full_steps_per_rotation: 200
 
 # Filament Drive Gear_1 --------------------------
 [tmc2209 stepper_mmu_gear_1]
-uart_pin: mmu1:MMU_GEAR_UART_1
+uart_pin: mmu1:MMU_GEAR_UART
 
 [stepper_mmu_gear_1]
-step_pin: mmu1:MMU_GEAR_STEP_1
-dir_pin: mmu1:MMU_GEAR_DIR_1
-enable_pin: !mmu1:MMU_GEAR_ENABLE_1
+step_pin: mmu1:MMU_GEAR_STEP
+dir_pin: mmu1:MMU_GEAR_DIR
+enable_pin: !mmu1:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_2 --------------------------
 [tmc2209 stepper_mmu_gear_2]
-uart_pin: mmu2:MMU_GEAR_UART_2
+uart_pin: mmu2:MMU_GEAR_UART
 
 [stepper_mmu_gear_2]
-step_pin: mmu2:MMU_GEAR_STEP_2
-dir_pin: mmu2:MMU_GEAR_DIR_2
-enable_pin: !mmu2:MMU_GEAR_ENABLE_2
+step_pin: mmu2:MMU_GEAR_STEP
+dir_pin: mmu2:MMU_GEAR_DIR
+enable_pin: !mmu2:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_3 --------------------------
 [tmc2209 stepper_mmu_gear_3]
-uart_pin: mmu3:MMU_GEAR_UART_3
+uart_pin: mmu3:MMU_GEAR_UART
 
 [stepper_mmu_gear_3]
-step_pin: mmu3:MMU_GEAR_STEP_3
-dir_pin: mmu3:MMU_GEAR_DIR_3
-enable_pin: !mmu3:MMU_GEAR_ENABLE_3
+step_pin: mmu3:MMU_GEAR_STEP
+dir_pin: mmu3:MMU_GEAR_DIR
+enable_pin: !mmu3:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_4 --------------------------
 [tmc2209 stepper_mmu_gear_4]
-uart_pin: mmu4:MMU_GEAR_UART_4
+uart_pin: mmu4:MMU_GEAR_UART
 
 [stepper_mmu_gear_4]
-step_pin: mmu4:MMU_GEAR_STEP_4
-dir_pin: mmu4:MMU_GEAR_DIR_4
-enable_pin: !mmu4:MMU_GEAR_ENABLE_4
+step_pin: mmu4:MMU_GEAR_STEP
+dir_pin: mmu4:MMU_GEAR_DIR
+enable_pin: !mmu4:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_5 --------------------------
 [tmc2209 stepper_mmu_gear_5]
-uart_pin: mmu5:MMU_GEAR_UART_5
+uart_pin: mmu5:MMU_GEAR_UART
 
 [stepper_mmu_gear_5]
-step_pin: mmu5:MMU_GEAR_STEP_5
-dir_pin: mmu5:MMU_GEAR_DIR_5
-enable_pin: !mmu5:MMU_GEAR_ENABLE_5
+step_pin: mmu5:MMU_GEAR_STEP
+dir_pin: mmu5:MMU_GEAR_DIR
+enable_pin: !mmu5:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_6 --------------------------
 [tmc2209 stepper_mmu_gear_6]
-uart_pin: mmu6:MMU_GEAR_UART_6
+uart_pin: mmu6:MMU_GEAR_UART
 
 [stepper_mmu_gear_6]
-step_pin: mmu6:MMU_GEAR_STEP_6
-dir_pin: mmu6:MMU_GEAR_DIR_6
-enable_pin: !mmu6:MMU_GEAR_ENABLE_6
+step_pin: mmu6:MMU_GEAR_STEP
+dir_pin: mmu6:MMU_GEAR_DIR
+enable_pin: !mmu6:MMU_GEAR_ENABLE
 
 # Filament Drive Gear_7 --------------------------
 [tmc2209 stepper_mmu_gear_7]
-uart_pin: mmu7:MMU_GEAR_UART_7
+uart_pin: mmu7:MMU_GEAR_UART
 
 [stepper_mmu_gear_7]
-step_pin: mmu7:MMU_GEAR_STEP_7
-dir_pin: mmu7:MMU_GEAR_DIR_7
-enable_pin: !mmu7:MMU_GEAR_ENABLE_7
+step_pin: mmu7:MMU_GEAR_STEP
+dir_pin: mmu7:MMU_GEAR_DIR
+enable_pin: !mmu7:MMU_GEAR_ENABLE
 
 [mmu_sensors]
-pre_gate_switch_pin_0: ^mmu0:MMU_PRE_GATE_0
-pre_gate_switch_pin_1: ^mmu1:MMU_PRE_GATE_1
-pre_gate_switch_pin_2: ^mmu2:MMU_PRE_GATE_2
-pre_gate_switch_pin_3: ^mmu3:MMU_PRE_GATE_3
-pre_gate_switch_pin_4: ^mmu4:MMU_PRE_GATE_4
-pre_gate_switch_pin_5: ^mmu5:MMU_PRE_GATE_5
-pre_gate_switch_pin_6: ^mmu6:MMU_PRE_GATE_6
-pre_gate_switch_pin_7: ^mmu7:MMU_PRE_GATE_7
+pre_gate_switch_pin_0: ^mmu0:MMU_PRE_GATE
+pre_gate_switch_pin_1: ^mmu1:MMU_PRE_GATE
+pre_gate_switch_pin_2: ^mmu2:MMU_PRE_GATE
+pre_gate_switch_pin_3: ^mmu3:MMU_PRE_GATE
+pre_gate_switch_pin_4: ^mmu4:MMU_PRE_GATE
+pre_gate_switch_pin_5: ^mmu5:MMU_PRE_GATE
+pre_gate_switch_pin_6: ^mmu6:MMU_PRE_GATE
+pre_gate_switch_pin_7: ^mmu7:MMU_PRE_GATE
 
-post_gear_switch_pin_0: ^mmu0:MMU_POST_GEAR_0
-post_gear_switch_pin_1: ^mmu1:MMU_POST_GEAR_1
-post_gear_switch_pin_2: ^mmu2:MMU_POST_GEAR_2
-post_gear_switch_pin_3: ^mmu3:MMU_POST_GEAR_3
-post_gear_switch_pin_4: ^mmu4:MMU_POST_GEAR_4
-post_gear_switch_pin_5: ^mmu5:MMU_POST_GEAR_5
-post_gear_switch_pin_6: ^mmu6:MMU_POST_GEAR_6
-post_gear_switch_pin_7: ^mmu7:MMU_POST_GEAR_7
+post_gear_switch_pin_0: ^mmu0:MMU_POST_GEAR
+post_gear_switch_pin_1: ^mmu1:MMU_POST_GEAR
+post_gear_switch_pin_2: ^mmu2:MMU_POST_GEAR
+post_gear_switch_pin_3: ^mmu3:MMU_POST_GEAR
+post_gear_switch_pin_4: ^mmu4:MMU_POST_GEAR
+post_gear_switch_pin_5: ^mmu5:MMU_POST_GEAR
+post_gear_switch_pin_6: ^mmu6:MMU_POST_GEAR
+post_gear_switch_pin_7: ^mmu7:MMU_POST_GEAR
 
 extruder_switch_pin: ^EBBCan: PB6
 toolhead_switch_pin: ^EBBCan: PB5
@@ -457,35 +457,35 @@ Start by completely deleting the content of that file and hitting save.
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and delete the corresponding [gcode_button mmu_eject_button_N] sections. If you have more than 8 lanes, add more blocks following the patterns below.
 ```
 [gcode_button mmu_eject_button_0]
-pin: mmu0:EJECT_BUTTON_0
+pin: mmu0:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=0
 
 [gcode_button mmu_eject_button_1]
-pin: mmu1:EJECT_BUTTON_1
+pin: mmu1:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=1
 
 [gcode_button mmu_eject_button_2]
-pin: mmu2:EJECT_BUTTON_2
+pin: mmu2:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=2
 
 [gcode_button mmu_eject_button_3]
-pin: mmu3:EJECT_BUTTON_3
+pin: mmu3:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=3
 
 [gcode_button mmu_eject_button_4]
-pin: mmu4:EJECT_BUTTON_4
+pin: mmu4:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=4
 
 [gcode_button mmu_eject_button_5]
-pin: mmu5:EJECT_BUTTON_5
+pin: mmu5:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=5
 
 [gcode_button mmu_eject_button_6]
-pin: mmu6:EJECT_BUTTON_6
+pin: mmu6:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=6
 
 [gcode_button mmu_eject_button_7]
-pin: mmu7:EJECT_BUTTON_7
+pin: mmu7:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=7
 ```
 
