@@ -89,7 +89,7 @@ The Happy hare installer generates a generic mmu.cfg file that needs re-writing 
 Start by completely deleting the content of that file and hitting save.
 
 **Step 2: Update mmu.cfg with the EMU mcu boards definitions** <br/><br/>
-For each lane you will need one distinct mcu mmu block defining the board name and the canbus UUID as noted earlier. In the example below I am using an 8 lane configuration. For a two lane setup, for example, you'd use [mcu mmu0] and [mcu mmu1] only.
+For each lane you will need one distinct mcu mmu block defining the board name and the canbus UUID as noted earlier. In the example below I am using an 8 lane configuration. For a two lane setup, for example, you'd use `[mcu mmu0]` and `[mcu mmu1]` only.
 ```
 [mcu mmu0]
 canbus_uuid: your uuid 
@@ -128,7 +128,7 @@ canbus_interface: can0
 After the board definitions, insert the board pin aliases. 
 
 > [!IMPORTANT]
-> **Important note:** The first board defines the aliases for the tension and compression sensor too, so it is different to the rest. In the example below I am using an 8 lane configuration. Remove the correspinding mmuN reference from the mcu line to match the number of lanes you have (eg. mmu0, mmu1 for a two lane setup).
+> **Important note:** The first board defines the aliases for the tension and compression sensor too, so it is different to the rest. In the example below I am using an 8 lane configuration. Remove the corresponding `mmuN` reference from the mcu line to match the number of lanes you have (eg. `mcu: mmu0, mmu1` for a two lane setup).
 ```
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmu7
@@ -148,6 +148,8 @@ aliases:
     MMU_TENSION=PB8,
     MMU_COMPRESSION=PB9,
 
+    MMU_FAN=PA0
+
     EJECT_BUTTON=PB6,
 ```
 This file is now complete! 
@@ -161,11 +163,11 @@ Start by completely deleting the content of that file and hitting save.
 **Step 2: Paste the below configuration in the mmu_hardware.cfg file**<br/><br/>
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and change the below:
 1. **num_gates: 8 -> to equal to the number of lanes you have**
-2. **Delete the unecessary tmc and stepper blocks**. For example if you have a 5 lane unit, delete Filament Drive Gear_5, Filament Drive Gear_6, Filament Drive Gear_7 blocks from the below.
-3. **Delete the uncesessary pre_gate_switch_pin lines and post_gear_switch_pin lines**. For example for a 5 lane setup, remove pre_gate_switch_pin_5, pre_gate_switch_pin_6, pre_gate_switch_pin_7, post_gear_switch_pin_5, post_gear_switch_pin_6, post_gear_switch_pin_7
+2. **Delete the unecessary tmc and stepper blocks**. For example if you have a 5 lane unit, delete `[tmc2209 stepper_mmu_gear_5]`, `[tmc2209 stepper_mmu_gear_6]`, `[tmc2209 stepper_mmu_gear_7]` blocks from the below.
+3. **Delete the uncesessary pre_gate_switch_pin lines and post_gear_switch_pin lines**. For example for a 5 lane setup, remove `pre_gate_switch_pin_5`, `pre_gate_switch_pin_6`, `pre_gate_switch_pin_7`, `post_gear_switch_pin_5`, `post_gear_switch_pin_6`, `post_gear_switch_pin_7`
 4. **Update the LED chain_count**: 16 is for 8 lanes. This needs to be equal to number of lanes x 2. So for a 5 lane setup this would be set to 10.
-5. **Update the LED effect exit leds**: exit_leds: neopixel:mmu_leds (1,3,5,7,9,11,13,15) is for 8 lanes. For 5, this should be 1,3,5,7,9.
-6. **Update the LED effect entry leds**: entry_leds: neopixel:mmu_leds (2,4,6,8,10,12,14,16) is for 8 lanes. For 5, this should be 2,4,6,8,10
+5. **Update the LED effect exit leds**: `exit_leds: neopixel:mmu_leds (1,3,5,7,9,11,13,15)` is for 8 lanes. For 5, this should be exit_leds: neopixel:mmu_leds (1,3,5,7,9)` .
+6. **Update the LED effect entry leds**: `entry_leds: neopixel:mmu_leds (2,4,6,8,10,12,14,16)` is for 8 lanes. For 5, this should be `entry_leds: neopixel:mmu_leds (2,4,6,8,10)`
 
 If you have more than 8 lanes, insert accordingly additional blocks, following the patterns as illustrated in the full configuration file below.
 
@@ -409,11 +411,11 @@ max_temp: 130
 In addition, it contains the fan definitions for the unit as below. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
 ```
 [fan_generic _emu_fan_N]
-pin: mmu0:PA0 # mmu0=First lane, mmu1=second lane etc.
+pin: mmu0:MMU_FAN # mmu0=First lane, mmu1=second lane etc.
 max_power: 1
 kick_start_time: 0.5
 ```
-Finally it contains the fan control macro that controls the fans on a by-lane basis. In the variable_sensors add the names of the **_Lane_N_onboard temperature sensors**, separated by a coma. In the variable_fans add the names of the **base unit fans**, separated by a coma. 
+Finally it contains the fan control macro that controls the fans on a by-lane basis. In the variable_sensors add the names of the **_Lane_N_onboard temperature sensors**, separated by a comma. In the variable_fans add the names of the **base unit fans**, separated by a comma. 
 
 > [!NOTE]
 > Prefixing the fans and board temperature sensors with a _ will hide them from the Mainsail UI, which is helpful to reduce clutter once you have your setup tuned and validated.
