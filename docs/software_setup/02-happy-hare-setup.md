@@ -148,7 +148,7 @@ aliases:
     MMU_TENSION=PB8,
     MMU_COMPRESSION=PB9,
 
-    MMU_FAN=PA0
+    MMU_FAN=PA0,
 
     EJECT_BUTTON=PB6,
 ```
