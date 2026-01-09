@@ -398,7 +398,8 @@ That file contains the **BME temperature and humidity sensor definitions** as be
 sensor_type: BME280
 i2c_address: 118
 i2c_mcu: mmu0  # mmu0=First lane, mmu1=second lane etc.
-i2c_bus: i2c3_PB3_PB4
+i2c_software_scl_pin: mmu0:PB3
+i2c_software_sda_pin: mmu0:PB4
 ```
 It also contains the definition of the onboard EBB temperature sensors used to control the unit fans. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
 ```
