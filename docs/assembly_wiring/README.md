@@ -117,6 +117,8 @@ The below print settings are recommended for the base units and their accessorie
 4. For the BMG tensioning arm, the bushing is no longer an option. 
 5. Add a washer to the stepper tensioning arm on both sides of the spring.
 6. Stepper body screws are all M3x20
+7. Front ECAS is no longer required
+8. PTFE tube lengths have been updated since the video release. [Use the dedicated cutter STL](https://github.com/DW-Tas/EMU/blob/main/STL/Tools/PTFE%20Cutter%20and%20Length%20Tool.stl) to measure and cut the PTFE tubes.
 
 ### Part 2: Drybox Assembly Guide
 [![EMU Dry Box Assembly Guide](https://img.youtube.com/vi/JZzMyOBCdSM/0.jpg)](https://www.youtube.com/watch?v=JZzMyOBCdSM)
