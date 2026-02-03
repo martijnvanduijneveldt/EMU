@@ -14,7 +14,7 @@
   - [Part 5: EMU Sync Assembly images](#part-5-emu-sync-assembly-images)
 - [Wiring Instructions and Diagrams](#wiring-instructions-and-diagrams)
 - [Wiring key dimensions](#wiring-key-dimensions)
-  - [Base wiring dimensions](#base)
+  - [Base wiring dimensions](#base-wiring-dimensions)
   - [PCB Hatch wiring dimensions](#pcb-hatch-wiring-dimensions)
   - [DIY Hatch (no pcb) wiring dimensions](#diy-hatch-no-pcb-wiring-dimensions)
 
