@@ -240,7 +240,10 @@ This parts describes the recommended wire length for easy assembly and maintenan
 
 ### PCB Hatch wiring dimensions
 
-> Comming soon 🚀
+<p align="center">
+  <img src="../assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
+</p>
+
 
 ### DIY Hatch (no pcb) wiring dimensions
 
